@@ -6,7 +6,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background: #2b2b2b;
+  background: #ffffff;
   margin: 0;
   font-family: "Inter", sans-serif;
 }
@@ -21,13 +21,14 @@ img {
   display: block;
 }
 
-h1 {
+h1,
+h2 {
   margin: 0;
   margin-bottom: 1.5rem;
 }
 
 p {
-  margin: 0;
+  margin: 0 0 3rem;
 }
 
 section {
@@ -57,7 +58,7 @@ section {
 
 nav {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   padding: 2.5rem 0;
   text-decoration: none;
   color: #ffffff;
@@ -115,12 +116,52 @@ nav a {
   padding-top: 5rem;
 }
 
-.about__text {
+.about__textColumn {
   width: 100%;
+}
+
+.about__text {
+  margin-bottom: 3rem;
 }
 
 .about__image {
   width: 100%;
+}
+
+.about__resume {
+  display: block;
+  border-radius: 15px;
+  background-color: #1f4577;
+
+  text-align: center;
+  padding: 2rem 0rem;
+  max-width: 30rem;
+  transition: background-color 0.5s ease;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.about__resume:hover {
+  background-color: #19375e;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: #0f2138;
+  padding: 2.5rem 0 1rem;
+}
+
+.footer__copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+#work {
+  padding: 5rem 0;
 }
 
 @media screen and (min-width: 576px) {
@@ -130,6 +171,11 @@ nav a {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+
   .navbar__menuButton {
     display: none;
   }
@@ -137,8 +183,18 @@ nav a {
     max-width: 720px;
   }
 
-  .about__text {
+  .about__textColumn {
     width: 58%;
+  }
+
+  .about__techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .about__techList span {
+    width: 49%;
   }
 
   .about__image {
@@ -155,9 +211,8 @@ nav a {
     font-size: 6rem;
   }
 
-  #about p {
-    font-size: 2.5rem;
-    line-height: 1.4;
+  h2 {
+    font-size: 4rem;
   }
 }
 

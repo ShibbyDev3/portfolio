@@ -4,4 +4,7 @@ window.addEventListener(`DOMContentLoaded`, (event) => {
   };
 
   document.querySelector(`.navbar__menuButton`).addEventListener(`click`, menuButtonClick);
+  document.querySelector(`.totalYears`).innerHTML = `${new Date().getFullYear() - 2011}`;
+  document.querySelector(`.frontendYears`).innerHTML = `${new Date().getFullYear() - 2018}`;
+  document.querySelector(`.footer__copyrightYear`).innerHTML = `${new Date().getFullYear()}`;
 });
