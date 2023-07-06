@@ -7,28 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eddy Gomez</title>
     <link rel="stylesheet" href="assets/style.css">
-    <script defer src="index.js"></script>
+    <script defer src="assets/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
+    <section id="nav">
         <div class="container">
-            <div><a href="#">Logo</a></div>
-            <div><a href="#about">About</a></div>
-            <div><a href="#work">Work</a></div>
-            <div><a href="#projects">Projects</a></div>
+            <div>
+                <span class="logo">Eddy Gomez</span>
+            </div>
+            <nav>
+                <div><a href="#about">About</a></div>
+                <div><a href="#work">Work</a></div>
+                <div><a href="#projects">Projects</a></div>
+            </nav>
+            <button class="navbar__menuButton">
+                <div class="navbar__menuLine"></div>
+                <div class="navbar__menuLine"></div>
+                <div class="navbar__menuLine"></div>
+            </button>
         </div>
-    </nav>
+    </section>
     <section id="about">
         <div class="container">
-            <div>
-                Hey, I'm Eddy Gomez,
-                an accomplished front-end developer from Jacksonville, FL. I've worked at Newfold Digital for 11 years,
-                with over 3 years in a front-end developer role. I am passionate about finding creative solutions to
-                complex problems while learning a thing or two along the way.
+            <div class="about__text">
+                <h1>Hey, I'm Eddy Gomez</h1>
+                <p>I am an accomplished front-end developer from Jacksonville, FL. I've worked at Newfold Digital for
+                    <span></span> years, with over <span></span> years in a front-end developer role. I am passionate
+                    about finding creative solutions to complex problems while learning a thing or two along the way.
+                </p>
             </div>
-            <div>
-
+            <div class="about__image">
+                <img src="./imgs/eddygomez.png" class="about__eddyImg" alt="" />
             </div>
         </div>
     </section>

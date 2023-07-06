@@ -1,0 +1,174 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  background: #2b2b2b;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  gap: 1.5rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#nav {
+  background: #0f2138;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  z-index: 2;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar__menuButton {
+  outline: none;
+  border: none;
+  background: #1f4577;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.navbar__menuButton:hover {
+  cursor: pointer;
+}
+
+.navbar__menuLine {
+  background: #fff;
+  padding: 0.2rem 0;
+  width: 100%;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+.navbar__menuButton.active .navbar__menuLine:first-child {
+  transform: translateY(0.8rem) rotate(45deg);
+}
+
+.navbar__menuButton.active .navbar__menuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__menuButton.active .navbar__menuLine:last-child {
+  transform: translateY(-1rem) rotate(-45deg);
+}
+
+#about {
+  background-color: #3372c4;
+  background-image: linear-gradient(314deg, #224d85 0%, #3372c4 74%);
+  padding-top: 5rem;
+}
+
+.about__text {
+  width: 100%;
+}
+
+.about__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar__menuButton {
+    display: none;
+  }
+  .container {
+    max-width: 720px;
+  }
+
+  .about__text {
+    width: 58%;
+  }
+
+  .about__image {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  #about p {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
