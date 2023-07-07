@@ -34,6 +34,8 @@ p {
 section {
   display: flex;
   justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .container {
@@ -49,6 +51,7 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
   position: sticky;
   z-index: 2;
+  top: 0;
 }
 
 .logo {
@@ -146,6 +149,42 @@ nav a {
   background-color: #19375e;
 }
 
+#work {
+  padding: 5rem 1.5rem;
+}
+
+.work__col2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.work__col2 h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.work__col2 a {
+  width: 40%;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #224d85 2px solid;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  padding: 1rem;
+}
+
+.work__col2 a:hover {
+  transform: scale(1.1);
+}
+
+.header__logoPath {
+  fill: #1f2044;
+}
+
 #footer {
   display: flex;
   justify-content: center;
@@ -160,8 +199,16 @@ nav a {
   color: #ffffff;
 }
 
-#work {
-  padding: 5rem 0;
+.work__col1 {
+  width: 100%;
+}
+
+.work__col2 {
+  width: 100%;
+}
+
+#education {
+  background-color: #224d85;
 }
 
 @media screen and (min-width: 576px) {
@@ -194,10 +241,18 @@ nav a {
   }
 
   .about__techList span {
-    width: 49%;
+    width: 58%;
   }
 
   .about__image {
+    width: 40%;
+  }
+
+  .work__col1 {
+    width: 58%;
+  }
+
+  .work__col2 {
     width: 40%;
   }
 }
