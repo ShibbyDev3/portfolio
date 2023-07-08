@@ -1,3 +1,11 @@
+:root {
+  --lightestBlue: #3372c4;
+  --lightBlue: #224d85;
+  --blue: #1f4678;
+  --darkBlue: #19375e;
+  --darkestBlue: #0f2138;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -30,6 +38,10 @@ ul {
   margin: 0;
 }
 
+h1 {
+  color: #ffffff;
+}
+
 h1,
 h2 {
   margin: 0;
@@ -56,7 +68,7 @@ section {
 }
 
 #nav {
-  background: #0f2138;
+  background: var(--darkestBlue);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
   position: sticky;
   z-index: 2;
@@ -89,7 +101,7 @@ nav.active {
 
 nav > div {
   width: 100%;
-  border-bottom: 1px solid #0f2138;
+  border-bottom: 1px solid var(--darkestBlue);
 }
 
 nav a {
@@ -140,8 +152,8 @@ nav a {
 }
 
 #about {
-  background-color: #3372c4;
-  background-image: linear-gradient(314deg, #224d85 0%, #3372c4 74%);
+  background-color: var(--lightestBlue);
+  background-image: linear-gradient(314deg, var(--lightestBlue) 0%, var(--blue) 70%);
   padding-top: 5rem;
 }
 
@@ -151,6 +163,7 @@ nav a {
 
 .about__text {
   margin-bottom: 4rem;
+  color: #ffffff;
 }
 
 .about__image {
@@ -160,7 +173,7 @@ nav a {
 .about__resume {
   display: block;
   border-radius: 15px;
-  background-color: #1f4577;
+  background-color: var(--darkBlue);
 
   text-align: center;
   padding: 1.5rem 0rem;
@@ -172,7 +185,7 @@ nav a {
 }
 
 .about__resume:hover {
-  background-color: #19375e;
+  background-color: var(--darkestBlue);
 }
 
 #skills {
@@ -181,10 +194,38 @@ nav a {
 
 #skills .container {
   flex-direction: column;
+  gap: 0;
+}
+
+#skills h2 {
+  margin-top: 1rem;
+}
+
+#skills ul {
+  margin: 0 0 1rem;
+}
+
+#skills li {
+  padding: 0.5rem;
+}
+
+.skills__col {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid var(--blue);
+}
+
+.skills__col:last-child {
+  border-bottom: 0px;
 }
 
 #work {
   padding: 5rem 1.5rem;
+}
+
+.work__col1 h2,
+.work__col1 p {
+  color: #ffffff;
 }
 
 .work__col2 {
@@ -197,6 +238,7 @@ nav a {
 .work__col2 h2 {
   width: 100%;
   text-align: center;
+  color: #ffffff;
 }
 
 .work__col2 a {
@@ -205,7 +247,8 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: #224d85 2px solid;
+  border: var(--lightestBlue) 2px solid;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   transition: all 0.5s ease;
   padding: 1rem;
@@ -228,13 +271,13 @@ nav a {
 }
 
 #work {
-  background-color: #224d85;
+  background-color: var(--lightBlue);
 }
 
 #footer {
   display: flex;
   justify-content: center;
-  background-color: #0f2138;
+  background-color: var(--darkestBlue);
   padding: 2.5rem 0 1rem;
 }
 
@@ -318,7 +361,16 @@ nav a {
   }
 
   .skills__col {
-    width: 32%;
+    width: 33%;
+  }
+
+  .skills__col {
+    border-bottom: 0px;
+    border-right: 1px solid var(--blue);
+  }
+
+  .skills__col:last-child {
+    border-right: 0px;
   }
 
   .work__col1 {
