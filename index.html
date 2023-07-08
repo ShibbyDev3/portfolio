@@ -6,29 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eddy Gomez</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script defer src="assets/scripts.js"></script>
+    <link rel="stylesheet" href="assets/style-min.css">
+    <script defer src="assets/scripts-min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
     <header id="nav">
-        <div class="container">
-            <div>
-                <span class="logo">Eddy Gomez</span>
+        <div class="nav__stickyWrapper">
+            <div class="container">
+                <div>
+                    <span class="logo">Eddy Gomez</span>
+                </div>
+                <nav>
+                    <div><a class="nav__link" href="#about">About</a></div>
+                    <div><a class="nav__link" href="#skills">Skills</a></div>
+                    <div><a class="nav__link" href="#work">Experience</a></div>
+                </nav>
+                <button class="navbar__menuButton">
+                    <div class="navbar__menuLine"></div>
+                    <div class="navbar__menuLine"></div>
+                    <div class="navbar__menuLine"></div>
+                </button>
             </div>
-            <nav>
-                <div><a href="#about">About</a></div>
-                <div><a href="#skills">Skills</a></div>
-                <div><a href="#work">Experience</a></div>
-            </nav>
-            <button class="navbar__menuButton">
-                <div class="navbar__menuLine"></div>
-                <div class="navbar__menuLine"></div>
-                <div class="navbar__menuLine"></div>
-            </button>
         </div>
     </header>
     <main>
@@ -36,7 +45,7 @@
             <div class="container">
                 <div class="about__textColumn">
                     <h1 class="about__headline">Hey, I'm Eddy Gomez</h1>
-                    <p class="about__text">I'm a front-end developer from Jacksonville, FL. I've worked at
+                    <p class="about__text">I'm a web developer from Jacksonville, FL. I've worked at
                         Newfold Digital for
                         <span class="totalYears"></span> years, with over <span class="frontendYears"></span> years in a
                         front-end developer role. I am passionate

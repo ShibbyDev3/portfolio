@@ -6,6 +6,24 @@
   --darkestBlue: #0f2138;
 }
 
+@keyframes navAnimateIn {
+  from {
+    transform: translateY(-10rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes navAnimateOut {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(-10rem);
+  }
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -71,13 +89,47 @@ header {
 #nav {
   background: var(--darkestBlue);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
-  z-index: 2;
+  z-index: 3;
   top: 0;
+  height: 5rem;
+}
+
+.nav__stickyWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+
+.nav__stickyWrapper.animateIn {
+  animation-name: navAnimateIn;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.nav__stickyWrapper.animateOut {
+  animation-name: navAnimateOut;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.nav__stickyWrapper.sticky {
+  position: fixed;
+  background: var(--darkestBlue);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .logo {
   color: #ffffff;
   font-size: 3rem;
+  cursor: default;
 }
 
 nav {
@@ -95,8 +147,12 @@ nav {
   overflow-y: hidden;
 }
 
+nav.noAnimation {
+  transition: max-height 0s ease;
+}
+
 nav.active {
-  max-height: 100vh;
+  max-height: 12.5rem;
 }
 
 nav > div {
@@ -182,8 +238,9 @@ nav a {
   text-align: center;
   padding: 1.5rem 0rem;
   max-width: 30rem;
-  transition: all 0.5s ease;
-
+  transition-property: background-color, border;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
   color: #ffffff;
   text-decoration: none;
 }
@@ -230,6 +287,7 @@ nav a {
 
 #work .container {
   align-items: normal;
+  flex-direction: column-reverse;
 }
 
 .work__col1 h2,
@@ -237,11 +295,19 @@ nav a {
   color: #ffffff;
 }
 
+.work__col1 p:last-child {
+  margin-bottom: 0;
+}
+
 .work__sticky {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+}
+
+.work__col2 {
+  margin-bottom: 3rem;
 }
 
 .work__col2 h2 {
@@ -315,6 +381,47 @@ nav a {
 }
 
 @media screen and (min-width: 768px) {
+  @keyframes animatedEddy {
+    from {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0rem);
+    }
+  }
+
+  #nav,
+  .nav__stickyWrapper {
+    height: 7rem;
+  }
+
+  nav {
+    transition: none;
+  }
+
+  nav a:after {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    margin-top: 0.2rem;
+    width: 100%;
+    background: #fff;
+    transition: max-width 0.4s ease;
+    max-width: 0%;
+  }
+
+  nav a:hover:after {
+    max-width: 100%;
+  }
+
+  .about__image {
+    animation-name: animatedEddy;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
   body {
     font-size: 2rem;
     line-height: 1.4;
@@ -340,6 +447,7 @@ nav a {
     text-decoration: none;
     color: #ffffff;
     font-size: 1.8rem;
+    transform: translateY(4px);
   }
 
   .container {
@@ -351,21 +459,11 @@ nav a {
   }
 
   .about__textColumn {
-    width: 57%;
-  }
-
-  .about__techList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .about__techList span {
     width: 58%;
   }
 
   .about__image {
-    width: 40%;
+    width: 38%;
     align-self: end;
   }
 
@@ -395,6 +493,11 @@ nav a {
     border-right: 0px;
   }
 
+  #work .container {
+    align-items: normal;
+    flex-direction: row;
+  }
+
   .work__col1 {
     width: 51%;
   }
@@ -406,6 +509,7 @@ nav a {
   .work__sticky {
     position: sticky;
     top: 1.5rem;
+    z-index: 2;
   }
 }
 
@@ -445,6 +549,10 @@ nav a {
 
   .about__text {
     margin-bottom: 4rem;
+  }
+
+  .about__image {
+    max-width: none;
   }
 
   .work__col1 {
