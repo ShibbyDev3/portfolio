@@ -16,6 +16,9 @@ window.addEventListener(`DOMContentLoaded`, (event) => {
     }
   };
   mediaQuery.addListener(mediaQueryFunction);
+  if (mediaQuery.matches) {
+    document.querySelector(`nav`).classList.add(`noAnimation`);
+  }
 
   document.querySelector(`.totalYears`).innerHTML = `${new Date().getFullYear() - 2011}`;
   document.querySelector(`.frontendYears`).innerHTML = `${new Date().getFullYear() - 2018}`;
