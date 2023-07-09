@@ -109,6 +109,7 @@ header {
   animation-iteration-count: 1;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
 }
 
 .nav__stickyWrapper.animateOut {
@@ -118,6 +119,7 @@ header {
   animation-iteration-count: 1;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
 }
 
 .nav__stickyWrapper.sticky {
@@ -125,6 +127,7 @@ header {
   background: var(--darkestBlue);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.06);
 }
 
 .logo {
