@@ -1,5 +1,7 @@
 window.addEventListener(`DOMContentLoaded`, () => {
   let prevScrollPos = window.scrollY;
+
+  // window size check and function
   const mediaQuery = window.matchMedia("(min-width: 768px)");
   const mediaQueryFunction = (event) => {
     if (event.matches) {
@@ -28,10 +30,12 @@ window.addEventListener(`DOMContentLoaded`, () => {
     });
   }
 
+  // Dynamic dates and numbers so I don't have to update every year
   document.querySelector(`.totalYears`).innerHTML = `${new Date().getFullYear() - 2011}`;
   document.querySelector(`.frontendYears`).innerHTML = `${new Date().getFullYear() - 2018}`;
   document.querySelector(`.footer__copyrightYear`).innerHTML = `${new Date().getFullYear()}`;
 
+  // hamburger toggle
   document.querySelector(`.navbar__menuButton`).addEventListener(`click`, (event) => {
     event.target.closest(`.navbar__menuButton`).classList.toggle(`active`);
     document.querySelector(`nav`).classList.toggle(`active`);
@@ -47,6 +51,7 @@ window.addEventListener(`DOMContentLoaded`, () => {
     }
   });
 
+  // closes mobile menu on link selection
   document.querySelectorAll(`.nav__link`).forEach((targetElement) => {
     targetElement.addEventListener(`click`, () => {
       if (document.querySelector(`nav.active`)) {
@@ -56,6 +61,7 @@ window.addEventListener(`DOMContentLoaded`, () => {
     });
   });
 
+  // fix for weird mobile menu issue when resizing from desktop to mobile
   document.querySelector(`.nav__stickyWrapper`).addEventListener(`animationend`, () => {
     if (document.querySelector(`.animateOut`)) {
       document.querySelector(`.nav__stickyWrapper`).classList.remove(`animateOut`);
@@ -67,6 +73,7 @@ window.addEventListener(`DOMContentLoaded`, () => {
     }
   });
 
+  // if user scrolls up brings nav to them and hides nav when user scrolls down
   window.addEventListener("scroll", (event) => {
     if (window.scrollY === 0) {
       if (document.querySelector(`.sticky`)) {
