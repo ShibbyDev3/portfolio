@@ -6,6 +6,11 @@
   --darkestBlue: #0f2138;
 }
 
+:focus-visible,
+.navbar__menuButton:focus-visible {
+  outline: 3px solid teal;
+}
+
 @keyframes navAnimateIn {
   from {
     transform: translateY(-10rem);

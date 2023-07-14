@@ -1,4 +1,4 @@
-window.addEventListener(`DOMContentLoaded`, (event) => {
+window.addEventListener(`DOMContentLoaded`, () => {
   let prevScrollPos = window.scrollY;
   const mediaQuery = window.matchMedia("(min-width: 768px)");
   const mediaQueryFunction = (event) => {
@@ -9,6 +9,9 @@ window.addEventListener(`DOMContentLoaded`, (event) => {
           targetElement.classList.remove(`active`);
         });
       }
+      document.querySelectorAll(".nav__link").forEach((targetElement) => {
+        targetElement.setAttribute(`tabindex`, `0`);
+      });
     } else {
       if (document.querySelector(`.noAnimation`)) {
         document.querySelector(`.noAnimation`).classList.remove(`noAnimation`);
@@ -16,8 +19,13 @@ window.addEventListener(`DOMContentLoaded`, (event) => {
     }
   };
   mediaQuery.addListener(mediaQueryFunction);
+  //device check on load
   if (mediaQuery.matches) {
     document.querySelector(`nav`).classList.add(`noAnimation`);
+  } else {
+    document.querySelectorAll(".nav__link").forEach((targetElement) => {
+      targetElement.setAttribute(`tabindex`, `-1`);
+    });
   }
 
   document.querySelector(`.totalYears`).innerHTML = `${new Date().getFullYear() - 2011}`;
@@ -27,6 +35,16 @@ window.addEventListener(`DOMContentLoaded`, (event) => {
   document.querySelector(`.navbar__menuButton`).addEventListener(`click`, (event) => {
     event.target.closest(`.navbar__menuButton`).classList.toggle(`active`);
     document.querySelector(`nav`).classList.toggle(`active`);
+    if (document.querySelector(`.navbar__menuButton.active`)) {
+      document.querySelectorAll(".nav__link").forEach((targetElement) => {
+        targetElement.setAttribute(`tabindex`, `0`);
+      });
+      document.querySelector(".nav__link:first-child").focus();
+    } else {
+      document.querySelectorAll(".nav__link").forEach((targetElement) => {
+        targetElement.setAttribute(`tabindex`, `-1`);
+      });
+    }
   });
 
   document.querySelectorAll(`.nav__link`).forEach((targetElement) => {
